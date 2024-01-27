@@ -6,10 +6,9 @@ use colored::*;
 fn main() {
     
     let secret_number = rand::thread_rng().gen_range(1, 11);
-    println!("The secret number is: {}", secret_number);
     
     loop{
-        println!("Input a number bw 1 to 10");
+        println!("Guess a number between 1 to 10");
     let mut guess = String::new();
     
 
@@ -28,7 +27,7 @@ fn main() {
     match guess.cmp(&secret_number){
         Ordering::Less => println!("{}", "Too small".red()),
         Ordering::Greater => println!("{}", "Too big".red()),
-        Ordering::Equal => {println!("{}","You win".green()); 
+        Ordering::Equal => {println!("{}","You win".green().bold()); 
         break;},
     }
     }
